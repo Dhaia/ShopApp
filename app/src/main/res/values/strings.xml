@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ShopApp2</string>
+    <string name="password_visible_content_description">Password visible</string>
+    <string name="password_hidden_content_description">Password hidden</string>
+</resources>

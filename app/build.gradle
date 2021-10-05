@@ -1,0 +1,185 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id("kotlin-parcelize")
+    id 'kotlin-kapt'
+    id("dagger.hilt.android.plugin")
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.6.0-M1"
+}
+
+group = "org.example"
+version = "1.0-SNAPSHOT"
+
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.firebase.crashlytics'
+
+android {
+    compileSdk 31
+
+    defaultConfig {compileSdkVersion
+        applicationId "com.example.shopapp2"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        useIR = true
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerVersion '1.5.21'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation 'androidx.activity:activity-compose:1.3.1'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+
+    implementation "androidx.compose.ui:ui-util:$compose_version"
+
+    implementation("androidx.compose.material:material-icons-core:1.0.1")
+    implementation("androidx.compose.material:material-icons-extended:1.0.1")
+    implementation("androidx.navigation:navigation-compose:2.4.0-alpha07")
+    // Animation for Compose
+    implementation "com.google.accompanist:accompanist-navigation-animation:0.17.0"
+
+    // Firebase
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:28.4.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    // Firebase Authentication library
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    // Declare the dependency for the Cloud Firestore library
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    // Declare the dependency for the Cloud Storage library
+    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.firebaseui:firebase-ui-storage:7.2.0'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+    // Declare the dependency for the Realtime Database library
+    implementation 'com.google.firebase:firebase-database-ktx'
+
+    // declare the dependency for the Google Play services library and specify its version
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+    // Coroutine Lifecycle Scopes
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+
+    // timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    // Hilt
+    def hilt = "2.37"
+    implementation "com.google.dagger:hilt-android:$hilt"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt"
+    def hilt_lifecycle_viewmodel = "1.0.0-alpha03"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_lifecycle_viewmodel"
+    kapt "androidx.hilt:hilt-compiler:$hilt_lifecycle_viewmodel"
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0-alpha03'
+
+    // Glide
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    // Request permissions using Compose
+    //implementation "com.google.accompanist:accompanist-permissions:<version>"
+
+    // Glide with compose
+    implementation "com.github.skydoves:landscapist-glide:1.3.2"
+
+    // Image compressor
+    implementation 'id.zelory:compressor:3.0.1'
+
+    // Room
+    def room_version = "2.3.0"
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // To use Kotlin annotation processing tool (kapt)
+    kapt "androidx.room:room-compiler:$room_version"
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$room_version")
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation "androidx.room:room-guava:$room_version"
+    // optional - Test helpers
+    testImplementation("androidx.room:room-testing:$room_version")
+    // optional - Paging 3 Integration
+    implementation("androidx.room:room-paging:2.4.0-alpha04")
+
+    // Gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    // Play Services
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.3.9"
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+
+    // accompanist to change System bars colors
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.17.0"
+
+    // Accompanist Pager
+    implementation "com.google.accompanist:accompanist-pager:0.17.0"
+    implementation "com.google.accompanist:accompanist-pager-indicators:0.17.0"
+
+    // Coil compose
+    implementation("io.coil-kt:coil-compose:1.3.2")
+
+    // Reveal swipe
+    implementation 'de.charlex.compose:revealswipe:1.0.0'
+
+    // Shimmer effect
+    implementation "com.google.accompanist:accompanist-placeholder-material:0.18.0"
+
+    // Algolia
+    implementation "com.algolia:algoliasearch-client-kotlin:1.10.0"
+    // Choose one of the following HTTP clients
+    implementation "io.ktor:ktor-client-android:1.6.4"
+}
