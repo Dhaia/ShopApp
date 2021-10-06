@@ -28,7 +28,9 @@ val Typography = Typography(
     )
     */
 )
-
+val giloryFont = FontFamily(
+    Font(R.font.gilroy_bold)
+)
 val customFont = FontFamily(
     Font(R.font.bauhaus)
 )

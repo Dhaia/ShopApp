@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.shopapp2.R
 import com.example.shopapp2.presentation.theme.customFont
+import com.example.shopapp2.presentation.theme.giloryFont
 import com.example.shopapp2.presentation.util.NavigationScreens
 
 @Composable
@@ -124,16 +125,18 @@ private fun Shape(imageId: Int, text: String) {
                 text = text, Modifier,
                 color = MaterialTheme.colors.surface,
                 fontSize = 25.sp,
-                fontFamily = customFont,
+                fontFamily = giloryFont,
                 style = TextStyle(
-                    letterSpacing = 1.sp,
+                    letterSpacing = 0.5.sp,
                     color = Color.White.copy(0.8f),
                     shadow = Shadow(
-                        color = if (isSystemInDarkTheme()) Color.Black.copy(0.1f)
-                        else Color.Black.copy(0.15f),
+                        color = if (isSystemInDarkTheme())
+                            Color.Black.copy(0.1f)
+                        else
+                            Color.Black.copy(0.15f),
                         offset = Offset(5f, 14f),
-                        blurRadius = 20f
-                    )
+                        blurRadius = 20f,
+                    ), fontWeight = FontWeight.SemiBold
                 )
             )
         }

@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Shop
 import androidx.compose.runtime.Composable
@@ -20,8 +21,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.shopapp2.presentation.theme.Purple700
+import com.example.shopapp2.presentation.theme.Purple500
 import com.example.shopapp2.presentation.util.NavigationScreens
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
@@ -31,6 +33,13 @@ fun SplashScreen(
     navController: NavController,
     splashViewModel: SplashViewModel = hiltViewModel()
 ) {
+
+    val systemUiController = rememberSystemUiController()
+    val useDarkIcons = MaterialTheme.colors.isLight
+    systemUiController.setStatusBarColor(
+        color = MaterialTheme.colors.primary,
+        darkIcons = useDarkIcons
+    )
 
     val scale = remember {
         Animatable(0f)
@@ -61,7 +70,9 @@ fun SplashScreen(
         }
     }
     Box(
-        modifier = Modifier.fillMaxSize().background(Purple700),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Purple500),
         contentAlignment = Alignment.Center
     ) {
         Icon(
