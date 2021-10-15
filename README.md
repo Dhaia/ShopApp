@@ -27,6 +27,6 @@ A Native Android Shop app.
 - [Reveal Swipe](https://github.com/ch4rl3x/RevealSwipe)
 
 # Try the app
-You can download the apk file using [**this Link**](https://drive.google.com/file/d/1vu0MYEyYHAtnAxOeCtuK3C0B5UunZ6iE/view?fbclid=IwAR2BpJ5HwXPYiL4dP1Sjqoth6Vsx2uozIt1BATSqGM9PIwDEFdBZ4Ih_TfY)
+You can download the apk file using [**this Link**](https://drive.google.com/file/d/10SOriJCpMD6bd5meKPW4Iha1PpL6s1ME/view?usp=sharing)
 
 Please don't forget to give me some feedback and let me know if you face any issues.
