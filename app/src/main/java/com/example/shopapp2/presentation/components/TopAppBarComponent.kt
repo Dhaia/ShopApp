@@ -71,7 +71,7 @@ fun StandardAppBar(
     int: Int
 ) {
     val appBarColor = if (MaterialTheme.colors.isLight) {
-        if (int == SEARCH) {
+        if (int == SEARCH || int == ORDERS) {
             MaterialTheme.colors.primary
         } else {
             MaterialTheme.colors.surface

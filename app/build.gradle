@@ -130,10 +130,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
     // Request permissions using Compose
-    //implementation "com.google.accompanist:accompanist-permissions:<version>"
-
-    // Glide with compose
-    implementation "com.github.skydoves:landscapist-glide:1.3.2"
+    implementation "com.google.accompanist:accompanist-permissions:0.19.0"
 
     // Image compressor
     implementation 'id.zelory:compressor:3.0.1'
@@ -182,4 +179,8 @@ dependencies {
     implementation "com.algolia:algoliasearch-client-kotlin:1.10.0"
     // Choose one of the following HTTP clients
     implementation "io.ktor:ktor-client-android:1.6.4"
+
+    //
+    implementation("br.com.devsrsouza.compose.icons.android:font-awesome:1.0.0")
+
 }

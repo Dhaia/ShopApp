@@ -26,7 +26,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.platform.SoftwareKeyboardController
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -35,10 +34,12 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.navigation.NavController
-import com.example.shopapp2.R
 import com.example.shopapp2.presentation.UserViewModel
 import com.example.shopapp2.presentation.components.StandardTextField
 import com.example.shopapp2.presentation.util.NavigationScreens
+import compose.icons.FontAwesomeIcons
+import compose.icons.fontawesomeicons.Brands
+import compose.icons.fontawesomeicons.brands.Google
 
 @ExperimentalAnimationApi
 @ExperimentalComposeUiApi
@@ -278,7 +279,7 @@ private fun SocialMediaItems(facebookIconColor: Color) {
                 ) {
                     Icon(
                         Icons.Outlined.Facebook,
-                        contentDescription = "",
+                        contentDescription = "FACEBOOK",
                         modifier = Modifier.size(34.dp),
                         tint = facebookIconColor
                     )
@@ -309,10 +310,9 @@ private fun SocialMediaItems(facebookIconColor: Color) {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Icon(
-                        painterResource(id = R.drawable.google_icon),
-                        contentDescription = "",
-                        modifier = Modifier.size(34.dp),
-                        tint = Color(0xFFDD4B39)
+                        imageVector = FontAwesomeIcons.Brands.Google,
+                        contentDescription = "Google",
+                        modifier = Modifier.size(24.dp)
                     )
                     Spacer(modifier = Modifier.padding(5.dp))
 

@@ -12,7 +12,6 @@ import androidx.compose.material.icons.filled.Sort
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -38,11 +37,12 @@ fun DropDownMenuComponent(
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                if(items.isNotEmpty()){
+                if (items.isNotEmpty()) {
                     Text(
                         items[selectedIndex],
                         fontSize = 13.sp,
-                        fontWeight = FontWeight.SemiBold
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colors.onSurface
                     )
                 }
                 Spacer(modifier = Modifier.padding(2.dp))
@@ -62,7 +62,8 @@ fun DropDownMenuComponent(
                     setSelectedIndex(index)
                     setExpanded(false)
                 }) {
-                    Text(text = text, color = MaterialTheme.colors.primary)
+                    Text(text = text,
+                        color = MaterialTheme.colors.onSurface)
                 }
             }
         }

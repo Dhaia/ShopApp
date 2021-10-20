@@ -47,9 +47,7 @@ fun CartListItemShimmer() {
                 Spacer(modifier = Modifier.padding(10.dp))
 
                 Row(modifier = Modifier.fillMaxSize()) {
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_launcher_background),
-                        contentDescription = "",
+                    Box(
                         modifier = Modifier
                             .fillMaxHeight()
                             .fillMaxWidth(0.4f)
@@ -59,7 +57,6 @@ fun CartListItemShimmer() {
                                 color = shimmerColor,
                                 shape = RoundedCornerShape(20.dp)
                             ),
-                        contentScale = ContentScale.Crop
                     )
                     Column(
                         Modifier
@@ -155,9 +152,7 @@ fun BookmarksListItemShimmer() {
             .height(150.dp)
     ) {
         Row(modifier = Modifier.fillMaxSize()) {
-            Image(
-                painter = painterResource(id = R.drawable.ic_launcher_background),
-                contentDescription = "",
+            Box(
                 modifier = Modifier
                     .fillMaxHeight()
                     .fillMaxWidth(0.4f)
@@ -167,7 +162,6 @@ fun BookmarksListItemShimmer() {
                         color = shimmerColor,
                         shape = RoundedCornerShape(20.dp)
                     ),
-                contentScale = ContentScale.Crop
             )
 
             Column(
@@ -257,8 +251,7 @@ fun ShoppingListItemShimmer() {
             .clip(RoundedCornerShape(15.dp))
     ) {
         Column {
-            Image(
-                painter = painterResource(id = R.drawable.ic_launcher_foreground),
+            Box(
                 modifier = Modifier
                     .height(170.dp)
                     .fillMaxWidth()
@@ -268,8 +261,6 @@ fun ShoppingListItemShimmer() {
                         highlight = PlaceholderHighlight.shimmer(),
                         shape = RoundedCornerShape(bottomStart = 15.dp, bottomEnd = 15.dp)
                     ),
-                contentScale = ContentScale.Crop,
-                contentDescription = null,
             )
 
             Spacer(modifier = Modifier.padding(4.dp))

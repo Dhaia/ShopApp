@@ -11,6 +11,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -52,6 +53,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.GoogleAuthProvider
+import compose.icons.FontAwesomeIcons
+import compose.icons.fontawesomeicons.Brands
+import compose.icons.fontawesomeicons.brands.Google
 import timber.log.Timber
 
 @ExperimentalComposeUiApi
@@ -293,10 +297,9 @@ private fun Content(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Icon(
-                            painterResource(id = R.drawable.google_icon),
-                            contentDescription = "",
-                            modifier = Modifier.size(34.dp),
-                            tint = Color(0xFFDD4B39)
+                            imageVector = FontAwesomeIcons.Brands.Google,
+                            contentDescription = "Sign in with google",
+                            modifier = Modifier.size(24.dp)
                         )
                         Spacer(modifier = Modifier.padding(5.dp))
 

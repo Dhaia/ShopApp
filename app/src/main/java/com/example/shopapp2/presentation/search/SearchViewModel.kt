@@ -19,7 +19,6 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
-
 @HiltViewModel
 class SearchViewModel
 @Inject
@@ -30,8 +29,6 @@ constructor(
     val searchResultList = mutableStateListOf<Product>()
 
     fun search(string: String) {
-        Timber.d("wxcwxc called")
-
         viewModelScope.launch {
             try {
                 val client = ClientSearch(

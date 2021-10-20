@@ -260,7 +260,8 @@ private fun CartItemEditDialog(
 
             Text(
                 text = "Edit your order",
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colors.onSurface
             )
 
             Spacer(modifier = Modifier.padding(8.dp))
@@ -269,7 +270,9 @@ private fun CartItemEditDialog(
             val (sizesSelectedIndex, setSizesSelectedIndex) = remember { mutableStateOf(0) }
 
             Row {
-                Text("Choose the size")
+                Text("Choose the size",
+                    color = MaterialTheme.colors.onSurface
+                )
 
                 Spacer(modifier = Modifier.padding(10.dp))
 
@@ -287,7 +290,9 @@ private fun CartItemEditDialog(
             Spacer(modifier = Modifier.padding(4.dp))
 
             Row {
-                Text("Choose the Color")
+                Text("Choose the Color",
+                    color = MaterialTheme.colors.onSurface
+                )
                 Spacer(modifier = Modifier.padding(10.dp))
 
                 val (expanded, setExpanded) = remember { mutableStateOf(false) }
